@@ -54,15 +54,15 @@
 
 <details>
 <summary>Home</summary>
-  <img src="images/wireframe_1.png" name="image-name">
+  <img src="images/Caddie-Home-Page.png" name="image-name">
 </details>
 <details>
 <summary>Scorecard</summary>
-  <img src="images/wireframe_2.png" name="image-name">
+  <img src="images/Caddie-Scorecard.png" name="image-name">
 </details>
 <details>
- <summary>Blog Feed</summary>
-  <img src="images/wireframe_3.png" name="image-name">
+ <summary>Blog Post</summary>
+  <img src="images/blog-post-caddie.png" name="image-name">
 </details>
 <br>
 
