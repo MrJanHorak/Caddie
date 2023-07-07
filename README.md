@@ -1,6 +1,6 @@
 # Caddie
 
-<!-- <img src="" name="image-name"> -->
+<img src="images/logo-caddie.png" name="image-name">
 
 ### Date: 07/19/2023
 
