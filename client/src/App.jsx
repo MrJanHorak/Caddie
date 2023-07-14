@@ -5,6 +5,7 @@ import Register from './pages/Register'
 import SignIn from './pages/Signin'
 import Nav from './components/Nav'
 import Home from './pages/Home'
+import Blog from './pages/Blog'
 import './App.css'
 
 const App = () => {
@@ -35,6 +36,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/signin" element={<SignIn setUser={setUser} />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/blog" element={<Blog />} />
         </Routes>
       </main>
     </div>
