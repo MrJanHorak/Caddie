@@ -20,17 +20,17 @@ const Course = () => {
   }
 
   useEffect(() => {
-    const getBlogs = async () => {
-      let response = await axios.get(`${BASE_URL}/blogs/all`)
-      setBlogs(response.data)
+    const getCourses = async () => {
+      let response = await axios.get(`${BASE_URL}/courses/all`)
+      setCourses(response.data)
     }
-    getBlogs()
+    getCourses()
   }, [])
 
   return (
     <div>
-      <div className="blog-card">
-        <h1>Blog</h1>
+      <div className="course-card">
+        <h1>Courses</h1>
         <form onSubmit={handleSubmit}>
           <input
             placeholder="content"
