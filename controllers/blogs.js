@@ -10,4 +10,9 @@ const createBlog = async (req, res) => {
   res.send(newBlog)
 }
 
+// const createComment = async (req, res) => {
+//   let newComment = await Blog.create(req.body)
+//   res.send(newComment)
+// }
+
 module.exports = { getAllBlogs, createBlog }

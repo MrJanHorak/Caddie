@@ -2,6 +2,7 @@ import Client from '../services/api'
 import { BASE_URL } from '../services/api'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+// import Comment from './Comment'
 
 const Blog = () => {
   const [formValues, setFormValues] = useState({ content: '' })
@@ -11,6 +12,7 @@ const Blog = () => {
     e.preventDefault()
     let response = await Client.post('/blogs/new', formValues)
     setBlogs([...blogs, response.data])
+    setFormValues({ content: '' })
     // response.data is new object
   }
 
@@ -28,18 +30,23 @@ const Blog = () => {
 
   return (
     <div>
-      <h1>Blog</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          placeholder="content"
-          onChange={handleChange}
-          value={formValues.content}
-        />
-        <button type="submit">Send It</button>
-      </form>
-      <section>
+      <div className="blog-card">
+        <h1>Blog</h1>
+        <form onSubmit={handleSubmit}>
+          <input
+            placeholder="content"
+            onChange={handleChange}
+            value={formValues.content}
+          />
+          <button type="submit">Send It</button>
+        </form>
+      </div>
+      <section className="new-blog-card">
         {blogs.map((blog) => (
-          <h4 key={blog._id}>{blog.content}</h4>
+          <div key={blog._id}>
+            <h4>{blog.content}</h4>
+            {/* <Comment comment={blog.comments} /> */}
+          </div>
         ))}
       </section>
     </div>
