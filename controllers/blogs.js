@@ -5,6 +5,13 @@ const createBlog = async (req, res) => {
   res.send(newBlog)
 }
 
+const updateBlog = async (req, res) => {
+  const updatedBlog = await Blog.findByIdAndUpdate(req.params.id, req.body, {
+    new: true
+  })
+  res.send(updatedBlog)
+}
+
 const deleteBlog = async (req, res) => {
   const blogId = req.params.id
   const deletedBlog = await Blog.findByIdAndDelete(blogId)
@@ -21,4 +28,4 @@ const getAllBlogs = async (req, res) => {
 //   res.send(newComment)
 // }
 
-module.exports = { getAllBlogs, createBlog, deleteBlog }
+module.exports = { getAllBlogs, createBlog, updateBlog, deleteBlog }

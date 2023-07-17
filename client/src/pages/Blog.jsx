@@ -6,7 +6,9 @@ import axios from 'axios'
 
 const Blog = () => {
   const [formValues, setFormValues] = useState({ content: '' })
+  const [editContent, setEditContent] = useState('')
   const [blogs, setBlogs] = useState([])
+  const [editingBlog, setEditBlog] = useState(null)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -17,7 +19,7 @@ const Blog = () => {
   }
 
   const handleChange = (e) => {
-    setFormValues({ content: e.target.value })
+    setFormValues({ ...formValues, content: e.target.value })
   }
 
   useEffect(() => {
@@ -27,6 +29,27 @@ const Blog = () => {
     }
     getBlogs()
   }, [])
+
+  const handleChangeEdit = (e) => {
+    setEditContent(e.target.value)
+  }
+
+  const handleEdit = (id) => {
+    const blogEdit = blogs.find((blog) => blog._id === id)
+    setEditBlog(id)
+    setEditContent(blogEdit.content)
+  }
+
+  const handleUpdate = async (id) => {
+    const updatedBlog = {
+      ...blogs.find((blog) => blog._id === id),
+      content: editContent
+    }
+    await Client.put(`/blogs/${id}`, updatedBlog)
+    setBlogs(blogs.map((blog) => (blog._id === id ? updatedBlog : blog)))
+    setEditBlog(null)
+    setEditContent('')
+  }
 
   const handleDelete = async (id) => {
     await Client.delete(`/blogs/${id}`)
@@ -51,7 +74,22 @@ const Blog = () => {
           <div key={blog._id}>
             <h4>{blog.content}</h4>
             {/* <Comment comment={blog.comments} /> */}
-            <button onClick={() => handleDelete(blog._id)}>Delete Blog</button>
+            <button onClick={() => handleDelete(blog._id)}>
+              Delete Blog Post
+            </button>
+            <button onClick={() => handleEdit(blog._id)}>Edit Blog Post</button>
+            {editingBlog === blog._id && (
+              <div>
+                <input
+                  placeholder="Edit Blog"
+                  onChange={handleChangeEdit}
+                  value={editContent}
+                />
+                <button onClick={() => handleUpdate(blog._id)}>
+                  Update Blog
+                </button>
+              </div>
+            )}
           </div>
         ))}
       </section>
