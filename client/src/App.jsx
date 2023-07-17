@@ -6,6 +6,7 @@ import SignIn from './pages/Signin'
 import Nav from './components/Nav'
 import Home from './pages/Home'
 import Blog from './pages/Blog'
+import Course from './pages/Course'
 import './App.css'
 
 const App = () => {
@@ -37,6 +38,7 @@ const App = () => {
           <Route path="/signin" element={<SignIn setUser={setUser} />} />
           <Route path="/register" element={<Register />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/course" element={<Course />} />
         </Routes>
       </main>
     </div>

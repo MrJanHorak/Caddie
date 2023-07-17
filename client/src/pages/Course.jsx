@@ -4,28 +4,45 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 
 const Course = () => {
-  const [formValues, setFormValues] = useState({ content: '' })
+  const [formValues, setFormValues] = useState({ courseName: '', city: '' })
   const [courses, setCourses] = useState([])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     let response = await Client.post('/courses/new', formValues)
     setCourses([...courses, response.data])
-    setFormValues({ content: '' })
+    setFormValues({ courseName: '', city: '' })
     // response.data is new object
   }
 
-  const handleChange = (e) => {
-    setFormValues({ content: e.target.value })
+  const handleCourseNameChange = (e) => {
+    setFormValues({ ...formValues, courseName: e.target.value })
+  }
+  const handleCityChange = (e) => {
+    setFormValues({ ...formValues, city: e.target.value })
   }
 
   useEffect(() => {
     const getCourses = async () => {
-      let response = await axios.get(`${BASE_URL}/courses/all`)
-      setCourses(response.data)
+      try {
+        let response = await axios.get(`${BASE_URL}/courses/all`)
+        if (response && response.data) {
+          console.log(response.data)
+          setCourses(response.data)
+        } else {
+          console.log('server error')
+        }
+      } catch (error) {
+        console.error(error)
+      }
     }
     getCourses()
   }, [])
+
+  const handleDelete = async (id) => {
+    await Client.delete(`/courses/${id}`)
+    setCourses(courses.filter((course) => course._id !== id))
+  }
 
   return (
     <div>
@@ -33,18 +50,27 @@ const Course = () => {
         <h1>Courses</h1>
         <form onSubmit={handleSubmit}>
           <input
-            placeholder="content"
-            onChange={handleChange}
-            value={formValues.content}
+            placeholder="Course Name"
+            onChange={handleCourseNameChange}
+            value={formValues.courseName}
           />
-          <button type="submit">Send It</button>
+          <input
+            placeholder="City"
+            onChange={handleCityChange}
+            value={formValues.city}
+          />
+          <button type="submit">Add Course</button>
         </form>
       </div>
-      <section className="new-blog-card">
-        {blogs.map((blog) => (
-          <div key={blog._id}>
-            <h4>{blog.content}</h4>
-            {/* <Comment comment={blog.comments} /> */}
+      <section className="new-course-card">
+        {courses.map((course) => (
+          <div key={course._id}>
+            <h4>
+              {course.courseName} {course.city}
+            </h4>
+            <button onClick={() => handleDelete(course._id)}>
+              Delete Course
+            </button>
           </div>
         ))}
       </section>
@@ -52,4 +78,4 @@ const Course = () => {
   )
 }
 
-export default Blog
+export default Course
