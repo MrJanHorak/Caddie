@@ -28,6 +28,11 @@ const Blog = () => {
     getBlogs()
   }, [])
 
+  const handleDelete = async (id) => {
+    await Client.delete(`/blogs/${id}`)
+    setBlogs(blogs.filter((blog) => blog._id !== id))
+  }
+
   return (
     <div>
       <div className="blog-card">
@@ -46,6 +51,7 @@ const Blog = () => {
           <div key={blog._id}>
             <h4>{blog.content}</h4>
             {/* <Comment comment={blog.comments} /> */}
+            <button onClick={() => handleDelete(blog._id)}>Delete Blog</button>
           </div>
         ))}
       </section>

@@ -8,17 +8,14 @@ const createCourse = async (req, res) => {
   })
   const savedCourse = await newCourse.save()
   // let newCourse = await Course.create(req.body)
-  res.send(newCourse)
+  res.send(savedCourse)
 }
 
 const deleteCourse = async (req, res) => {
   const courseId = req.params.id
   const deletedCourse = await Course.findByIdAndDelete(courseId)
-  // if (!deletedCourse) {
-  //   return res.status(404).json({ error: 'Course Not Found' })
-  // }
 
-  res.send(newCourse)
+  res.send(deletedCourse)
 }
 
 const getAllCourses = async (req, res) => {
@@ -26,4 +23,4 @@ const getAllCourses = async (req, res) => {
   res.send(courses)
 }
 
-module.exports = { deleteCourse, createCourse, getAllCourses }
+module.exports = { createCourse, deleteCourse, getAllCourses }
