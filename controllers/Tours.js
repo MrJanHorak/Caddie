@@ -8,10 +8,28 @@ const getRankings = async (req, res) => {
     const response = await axios.get(
       `https://api.sportsdata.io/golf/v2/json/PlayerSeasonStats/2022?key=${process.env.API_KEY}`
     )
-    console.log(response)
+    let tour = await Tour.findOne({ name: 'PGA Tour' })
+    console.log(tour)
+    tour.rankings = []
+    response.data.forEach((player) => {
+      let playerObj = {
+        name: player.Name,
+        rank: player.WorldGolfRank,
+        events: player.Events,
+        playerId: player.PlayerID
+      }
+      tour.rankings.push(playerObj)
+    })
+    await tour.save()
+    res.send(tour.rankings)
   } catch (error) {
     throw error
   }
 }
 
-module.exports = { getRankings }
+const createTour = async (req, res) => {
+  let newTour = await Tour.create(req.body)
+  res.send(newTour)
+}
+
+module.exports = { getRankings, createTour }
