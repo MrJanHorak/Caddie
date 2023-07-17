@@ -7,6 +7,7 @@ import Nav from './components/Nav'
 import Home from './pages/Home'
 import Blog from './pages/Blog'
 import Course from './pages/Course'
+import Tour from './pages/Tour'
 import './App.css'
 
 const App = () => {
@@ -39,6 +40,7 @@ const App = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/course" element={<Course />} />
+          <Route path="/tour" element={<Tour />} />
         </Routes>
       </main>
     </div>

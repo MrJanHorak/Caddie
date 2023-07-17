@@ -12,6 +12,7 @@ const Nav = ({ user, handleLogOut }) => {
         <Link to="/"> Home </Link>
         <Link to="/blog"> Blog Post </Link>
         <Link to="/course"> Add Course </Link>
+        <Link to="/tour"> PGA Tour Info </Link>
       </nav>
     )
   }
