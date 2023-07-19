@@ -62,7 +62,8 @@ body {
 
 .nav-options a {
   text-decoration: none;
-  color: green;
+  color: seashell;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
 }
@@ -150,6 +151,7 @@ body {
   justify-content: center;
   align-items: center;
   color: #fff;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
 }
 
 .tour-list {
@@ -170,4 +172,5 @@ body {
   padding: 8px 16px; 
   border: 1px solid black; 
   margin-bottom: 8px; 
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
 }
