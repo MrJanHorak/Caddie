@@ -16,6 +16,26 @@ body {
   
 }
 
+.App.light {
+  background-color: blue;
+  color: red;
+}
+
+.App.dark {
+  background-color: green;
+  color: yellow;
+}
+
+.darkButton {
+  background-color: black;
+  color: pink;
+  display: flex;
+  justify-content: flex-start;
+  margin: 2px;
+  border: 1px solid white;
+  padding: 5px;
+}
+
 
 .nav-container {
   background-color: #333;
