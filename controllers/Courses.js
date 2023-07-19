@@ -5,7 +5,8 @@ const createCourse = async (req, res) => {
   const newCourse = new Course({
     courseName,
     city,
-    state
+    state,
+    par
   })
   const savedCourse = await newCourse.save()
   // let newCourse = await Course.create(req.body)
