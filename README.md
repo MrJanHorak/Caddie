@@ -59,7 +59,7 @@
 </details>
 <details>
 <summary>My Courses</summary>
-  <img src="images/Caddie-3.png" name="image-name">
+  <img src="images/Caddie-1.png" name="image-name">
 </details>
 <details>
  <summary>PGA Rankings</summary>
