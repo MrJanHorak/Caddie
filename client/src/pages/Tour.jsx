@@ -14,7 +14,7 @@ const Tour = () => {
   }, [])
 
   return (
-    <div>
+    <div className="tour-container">
       <h2>PGA Tour Info Page</h2>
       {rankings.length ? (
         <ol>
