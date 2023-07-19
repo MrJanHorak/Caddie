@@ -3,7 +3,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Anton", sans-serif;
-  background-color: seashell;
 
 }
 
@@ -12,7 +11,8 @@
 body {
   margin: 0;
   font-size: 15px;
- 
+  font-family: "Anton", sans-serif;
+  
 }
 
 
@@ -50,12 +50,23 @@ body {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+.feed-container {
+  width: 50%;
+  height: 100vh;
+  margin: 0 auto;
+
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://images.unsplash.com/photo-1593111774240-d529f12cf4bb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1176&q=80')!important;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 .blog-card {
   max-width: 30vw;
   margin: 0 auto;
+  /* margin-top: 2rem; */
   text-align: center;
-  margin-top: 2rem;
   margin-bottom: 4rem;
   padding: 4rem; 
   border: 1px solid #ccc;

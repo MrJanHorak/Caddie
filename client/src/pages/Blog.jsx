@@ -55,7 +55,7 @@ const Blog = () => {
   }
 
   return (
-    <div>
+    <div className="feed-container">
       <div className="blog-card">
         <h1>How was your round?</h1>
         <form onSubmit={handleSubmit}>
