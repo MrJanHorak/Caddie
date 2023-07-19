@@ -55,15 +55,15 @@
 
 <details>
 <summary>Home</summary>
-  <img src="images/Caddie-Home-Page.png" name="image-name">
+  <img src="images/Caddie-2.png" name="image-name">
 </details>
 <details>
-<summary>Scorecard</summary>
-  <img src="images/Caddie-Scorecard.png" name="image-name">
+<summary>My Courses</summary>
+  <img src="images/Caddie-3.png" name="image-name">
 </details>
 <details>
- <summary>Blog Post</summary>
-  <img src="images/blog-post-caddie.png" name="image-name">
+ <summary>PGA Rankings</summary>
+  <img src="images/Caddie-3.png" name="image-name">
 </details>
 <br>
 
