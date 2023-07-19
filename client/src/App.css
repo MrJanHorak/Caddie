@@ -134,3 +134,8 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.tour-container {
+  width: 50%;
+  height: 100vh;
+}
