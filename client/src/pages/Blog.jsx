@@ -57,7 +57,7 @@ const Blog = () => {
   return (
     <div>
       <div className="blog-card">
-        <h1>Blog</h1>
+        <h1>How was your round?</h1>
         <form onSubmit={handleSubmit}>
           <input
             placeholder="content"
@@ -71,10 +71,8 @@ const Blog = () => {
         {blogs.map((blog) => (
           <div key={blog._id} className="blog-post-card">
             <h4>{blog.content}</h4>
-            <button onClick={() => handleDelete(blog._id)}>
-              Delete Blog Post
-            </button>
-            <button onClick={() => handleEdit(blog._id)}>Edit Blog Post</button>
+            <button onClick={() => handleDelete(blog._id)}>Delete</button>
+            <button onClick={() => handleEdit(blog._id)}>Edit</button>
             {editingBlog === blog._id && (
               <div>
                 <input

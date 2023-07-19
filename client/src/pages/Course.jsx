@@ -4,14 +4,18 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 
 const Course = () => {
-  const [formValues, setFormValues] = useState({ courseName: '', city: '' })
+  const [formValues, setFormValues] = useState({
+    courseName: '',
+    city: '',
+    state: ''
+  })
   const [courses, setCourses] = useState([])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     let response = await Client.post('/courses/new', formValues)
     setCourses([...courses, response.data])
-    setFormValues({ courseName: '', city: '' })
+    setFormValues({ courseName: '', city: '', state: '' })
     // response.data is new object
   }
 
@@ -20,6 +24,9 @@ const Course = () => {
   }
   const handleCityChange = (e) => {
     setFormValues({ ...formValues, city: e.target.value })
+  }
+  const handleStateChange = (e) => {
+    setFormValues({ ...formValues, state: e.target.value })
   }
 
   useEffect(() => {
@@ -46,7 +53,7 @@ const Course = () => {
 
   return (
     <div>
-      <div className="course-card">
+      <div className="blog-card">
         <h1>Courses</h1>
         <form onSubmit={handleSubmit}>
           <input
@@ -59,14 +66,19 @@ const Course = () => {
             onChange={handleCityChange}
             value={formValues.city}
           />
+          <input
+            placeholder="State"
+            onChange={handleStateChange}
+            value={formValues.state}
+          />
           <button type="submit">Add Course</button>
         </form>
       </div>
-      <section className="new-course-card">
+      <section className="new-blog-card">
         {courses.map((course) => (
-          <div key={course._id}>
+          <div key={course._id} className="blog-post-card">
             <h4>
-              {course.courseName} {course.city}
+              {course.courseName} {course.city} {course.state}
             </h4>
             <button onClick={() => handleDelete(course._id)}>
               Delete Course

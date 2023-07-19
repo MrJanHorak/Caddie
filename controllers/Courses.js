@@ -1,10 +1,11 @@
 const Course = require('../models/Course')
 
 const createCourse = async (req, res) => {
-  const { courseName, city } = req.body
+  const { courseName, city, state } = req.body
   const newCourse = new Course({
     courseName,
-    city
+    city,
+    state
   })
   const savedCourse = await newCourse.save()
   // let newCourse = await Course.create(req.body)

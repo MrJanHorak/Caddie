@@ -9,17 +9,17 @@ const Nav = ({ user, handleLogOut }) => {
         <Link onClick={handleLogOut} to="/">
           Sign Out
         </Link>
-        <Link to="/"> Home </Link>
+        {/* <Link to="/"> Home </Link> */}
         <Link to="/blog"> Blog Post </Link>
         <Link to="/course"> Add Course </Link>
-        <Link to="/tour"> PGA Tour Info </Link>
+        <Link to="/tour"> PGA Tour Player Rankings </Link>
       </nav>
     )
   }
 
   const publicOptions = (
     <nav className="nav-options">
-      <Link to="/">Home</Link>
+      {/* <Link to="/">Home</Link> */}
       <Link to="/register">Register</Link>
       <Link to="/signin">Sign In</Link>
       <Link to="/blog">Blog Post</Link>

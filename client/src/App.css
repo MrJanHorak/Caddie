@@ -3,15 +3,16 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Anton", sans-serif;
-  background-color: 	seashell;
-  
+  background-color: seashell;
+
 }
 
 
 
 body {
   margin: 0;
-  font-size: 16px;
+  font-size: 15px;
+ 
 }
 
 
