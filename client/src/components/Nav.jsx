@@ -28,7 +28,7 @@ const Nav = ({ user, handleLogOut }) => {
 
   return (
     <header className="nav-container">
-      <Link to="/" className="nav-logo">
+      <Link to="/blog" className="nav-logo">
         <div>
           <h1>CADDIE</h1>
         </div>
