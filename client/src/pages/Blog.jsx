@@ -14,7 +14,6 @@ const Blog = () => {
     let response = await Client.post('/blogs/new', formValues)
     setBlogs([...blogs, response.data])
     setFormValues({ content: '' })
-    // response.data is new object
   }
 
   const handleChange = (e) => {
