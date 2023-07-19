@@ -54,7 +54,7 @@ body {
   width: 50%;
   height: 100vh;
   margin: 0 auto;
-
+  padding: 2rem;
   justify-content: center;
   align-items: center;
   background-image: url('https://images.unsplash.com/photo-1593111774240-d529f12cf4bb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1176&q=80')!important;
@@ -65,10 +65,9 @@ body {
 .blog-card {
   max-width: 30vw;
   margin: 0 auto;
-  /* margin-top: 2rem; */
-  text-align: center;
   margin-bottom: 4rem;
-  padding: 4rem; 
+  text-align: center;
+  padding: 3rem; 
   border: 1px solid #ccc;
   border-radius: 1rem; 
   background-color: #fff;
