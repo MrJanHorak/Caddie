@@ -8,7 +8,7 @@
 
 ## **_Description_**
 
-#### Caddie is a comprehensive web application that allows golfers to track and manage their golf scores, monitor their statistics, and post their round for their friends to see. Keep your golf game on par with Caddie.
+#### Caddie is a comprehensive web application that allows golfers to create their own course database, monitor live PGA Tour updates such as rankings, events played, etc. In the future Caddie will monitor the user's statistics, and post their round for their friends to see. Keep your golf game on par with Caddie.
 
 <br>
 
@@ -36,7 +36,7 @@
 
 ## **_API Reference_**
 
-- API Docs [here]()
+- API Docs [here](https://sportsdata.io/developers/api-documentation/golf)
 
 <br>
 

@@ -16,7 +16,7 @@ body {
   
 }
 
-.App.light {
+/* .App.light {
   background-color: seashell;
   color: black;
 }
@@ -34,7 +34,7 @@ body {
   margin: 2px;
   border: 1px solid white;
   padding: 5px;
-}
+} */
 
 
 .nav-container {
@@ -46,6 +46,7 @@ body {
 .nav-logo {
   text-decoration: none;
   color: black;
+  text-shadow: -1px -1px 0 seashell, 1px -1px 0 seashell, -1px 1px 0 seashell, 1px 1px 0 seashell;
 }
 
 .nav-bar {
@@ -53,6 +54,16 @@ body {
   align-items: center;
   justify-content: space-between;
 }
+
+/* .image-container {
+  display: flex;
+  align-items: center;
+}
+
+.image-container img {
+  width: 40px;
+  height: 40px;
+} */
 
 .nav-options {
   display: flex;
@@ -104,6 +115,8 @@ body {
   flex-direction: column;
   text-align: center;
   gap: 4rem; 
+  color: white;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
 }
 
 .blog-post-card {
@@ -114,6 +127,7 @@ body {
   border-radius: 1rem; 
   background-color: green;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); 
+  color: white;
 }
 
 .blog-post-card h4 {

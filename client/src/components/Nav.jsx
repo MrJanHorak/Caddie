@@ -33,7 +33,12 @@ const Nav = ({ user, handleLogOut }) => {
           <h1>CADDIE</h1>
         </div>
       </Link>
-      <div className="nav-bar">{user ? userOptions : publicOptions}</div>
+      <div className="nav-bar">
+        {user ? userOptions : publicOptions}
+        {/* <div className="image-container">
+          <img src="https://imgur.com/QFHo99G" alt="Image" />
+        </div> */}
+      </div>
     </header>
   )
 }
