@@ -28,7 +28,7 @@
 
 #### Mongo, Express, React, Node
 
-<!-- ![GitHub top language](https://img.shields.io/github/languages/top/pattongrooms/project-3-STP) ![GitHub language count](https://img.shields.io/github/languages/count/pattongrooms/project-3-STP) -->
+![GitHub top language](https://img.shields.io/github/languages/top/pattongrooms/Caddie) ![GitHub language count](https://img.shields.io/github/languages/count/pattongrooms/Caddie)
 
 <!-- <img src="images/technologies1.png" name="image-name"> -->
 
