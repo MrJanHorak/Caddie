@@ -158,3 +158,16 @@ body {
   width: 70%;
   margin: 0 auto;
 }
+
+.tour-list ol {
+  list-style: none; 
+  padding: 0;
+}
+
+.tour-list li {
+  color: white; 
+  font-size: 16px; 
+  padding: 8px 16px; 
+  border: 1px solid black; 
+  margin-bottom: 8px; 
+}
