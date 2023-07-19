@@ -4,6 +4,10 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 
 const Blog = (props) => {
+  console.log(props)
+  if (props.user === null) {
+    return 'Loading Page'
+  }
   const [formValues, setFormValues] = useState({
     title: '',
     content: '',
@@ -13,11 +17,14 @@ const Blog = (props) => {
   const [blogs, setBlogs] = useState([])
   const [editingBlog, setEditBlog] = useState(null)
 
+  const [toggle, setToggle] = useState(true)
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     let response = await Client.post('/blogs/new', formValues)
-    setBlogs([...blogs, response.data])
-    setFormValues({ title: '', content: '' })
+    console.log(response)
+    setToggle((prevToggle) => (prevToggle = !prevToggle))
+    setFormValues({ title: '', content: '', user: props.user.id })
   }
   console.log(blogs)
 
@@ -31,7 +38,7 @@ const Blog = (props) => {
       setBlogs(response.data)
     }
     getBlogs()
-  }, [])
+  }, [toggle])
 
   const handleChangeEdit = (e) => {
     setEditContent(e.target.value)
@@ -59,6 +66,31 @@ const Blog = (props) => {
     setBlogs(blogs.filter((blog) => blog._id !== id))
   }
 
+  const blogPostReverse = blogs
+    .slice()
+    .reverse()
+    .map((blog) => (
+      <div key={blog._id} className="blog-post-card">
+        <h4>{blog.title}</h4>
+        <h4>{blog.content}</h4>
+        {props.user?.id === blog.user && (
+          <>
+            <button onClick={() => handleDelete(blog._id)}>Delete</button>
+            <button onClick={() => handleEdit(blog._id)}>Edit</button>
+          </>
+        )}
+        {editingBlog === blog._id && (
+          <div>
+            <input
+              placeholder="Edit Blog"
+              onChange={handleChangeEdit}
+              value={editContent}
+            />
+            <button onClick={() => handleUpdate(blog._id)}>Update Blog</button>
+          </div>
+        )}
+      </div>
+    ))
   return (
     <div className="feed-container">
       <div className="blog-card">
@@ -79,32 +111,7 @@ const Blog = (props) => {
           <button type="submit">Send It</button>
         </form>
       </div>
-      <section className="new-blog-card">
-        {blogs.map((blog) => (
-          <div key={blog._id} className="blog-post-card">
-            <h4>{blog.title}</h4>
-            <h4>{blog.content}</h4>
-            {props.user?.id === blog.user && (
-              <>
-                <button onClick={() => handleDelete(blog._id)}>Delete</button>
-                <button onClick={() => handleEdit(blog._id)}>Edit</button>
-              </>
-            )}
-            {editingBlog === blog._id && (
-              <div>
-                <input
-                  placeholder="Edit Blog"
-                  onChange={handleChangeEdit}
-                  value={editContent}
-                />
-                <button onClick={() => handleUpdate(blog._id)}>
-                  Update Blog
-                </button>
-              </div>
-            )}
-          </div>
-        ))}
-      </section>
+      <section className="new-blog-card">{blogPostReverse}</section>
     </div>
   )
 }

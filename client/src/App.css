@@ -85,12 +85,13 @@ body {
 
 .feed-container {
   width: 50%;
-  height: 100vh;
+  height: 100%;
   margin: 0 auto;
   padding: 2rem;
   justify-content: center;
   align-items: center;
   background-image: url('https://images.unsplash.com/photo-1593111774240-d529f12cf4bb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1176&q=80')!important;
+  
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -109,6 +110,8 @@ body {
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
   border: 4px solid black;
 }
+
+
 
 .new-blog-card {
   display: flex;
@@ -190,4 +193,34 @@ body {
   border: 1px solid black; 
   margin-bottom: 8px; 
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
+
+
+.signin-col {
+  width: 100vw;
+  height: 98vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.signin-card {
+  padding: 5em;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}
+
+.col input {
+  margin-bottom: 1em;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signin-button {
 }
