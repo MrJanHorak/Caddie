@@ -9,7 +9,6 @@ const getRankings = async (req, res) => {
       `https://api.sportsdata.io/golf/v2/json/PlayerSeasonStats/2022?key=${process.env.API_KEY}`
     )
     let tour = await Tour.findOne({ name: 'PGA Tour' })
-    console.log(tour)
     tour.rankings = []
     response.data.forEach((player) => {
       let playerObj = {

@@ -23,9 +23,5 @@ const getAllBlogs = async (req, res) => {
   let blogs = await Blog.find()
   res.send(blogs)
 }
-// const createComment = async (req, res) => {
-//   let newComment = await Blog.create(req.body)
-//   res.send(newComment)
-// }
 
 module.exports = { getAllBlogs, createBlog, updateBlog, deleteBlog }

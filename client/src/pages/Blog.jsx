@@ -3,8 +3,12 @@ import { BASE_URL } from '../services/api'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
-const Blog = () => {
-  const [formValues, setFormValues] = useState({ content: '' })
+const Blog = (props) => {
+  const [formValues, setFormValues] = useState({
+    title: '',
+    content: '',
+    user: props.user.id
+  })
   const [editContent, setEditContent] = useState('')
   const [blogs, setBlogs] = useState([])
   const [editingBlog, setEditBlog] = useState(null)
@@ -13,11 +17,12 @@ const Blog = () => {
     e.preventDefault()
     let response = await Client.post('/blogs/new', formValues)
     setBlogs([...blogs, response.data])
-    setFormValues({ content: '' })
+    setFormValues({ title: '', content: '' })
   }
+  console.log(blogs)
 
   const handleChange = (e) => {
-    setFormValues({ ...formValues, content: e.target.value })
+    setFormValues({ ...formValues, [e.target.name]: e.target.value })
   }
 
   useEffect(() => {
@@ -60,7 +65,14 @@ const Blog = () => {
         <h1>How was your round?</h1>
         <form onSubmit={handleSubmit}>
           <input
+            placeholder="title"
+            name="title"
+            onChange={handleChange}
+            value={formValues.title}
+          />
+          <input
             placeholder="content"
+            name="content"
             onChange={handleChange}
             value={formValues.content}
           />
@@ -70,9 +82,14 @@ const Blog = () => {
       <section className="new-blog-card">
         {blogs.map((blog) => (
           <div key={blog._id} className="blog-post-card">
+            <h4>{blog.title}</h4>
             <h4>{blog.content}</h4>
-            <button onClick={() => handleDelete(blog._id)}>Delete</button>
-            <button onClick={() => handleEdit(blog._id)}>Edit</button>
+            {props.user?.id === blog.user && (
+              <>
+                <button onClick={() => handleDelete(blog._id)}>Delete</button>
+                <button onClick={() => handleEdit(blog._id)}>Edit</button>
+              </>
+            )}
             {editingBlog === blog._id && (
               <div>
                 <input
