@@ -138,4 +138,9 @@ body {
 .tour-container {
   width: 50%;
   height: 100vh;
+  margin: 0 auto;
+  padding: 2rem;
+  justify-content: center;
+  align-items: center;
+
 }
