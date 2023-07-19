@@ -53,7 +53,10 @@ body {
 .blog-card {
   max-width: 30vw;
   margin: 0 auto;
-  padding: 2rem; 
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  padding: 4rem; 
   border: 1px solid #ccc;
   border-radius: 1rem; 
   background-color: #fff;
@@ -66,6 +69,7 @@ body {
   justify-content: center;
   align-content: center;
   flex-direction: column;
+  text-align: center;
   gap: 4rem; 
 }
 
@@ -84,5 +88,5 @@ body {
 }
 
 .blog-post-card button {
-  margin-right: 3rem; 
+  margin: 0 auto;
 }
