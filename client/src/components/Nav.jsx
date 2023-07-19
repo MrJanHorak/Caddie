@@ -30,7 +30,7 @@ const Nav = ({ user, handleLogOut }) => {
     <header className="nav-container">
       <Link to="/" className="nav-logo">
         <div>
-          <h1>Nav Bar</h1>
+          <h1>CADDIE</h1>
         </div>
       </Link>
       <div className="nav-bar">{user ? userOptions : publicOptions}</div>

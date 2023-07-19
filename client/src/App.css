@@ -4,6 +4,7 @@
   box-sizing: border-box;
   font-family: "Anton", sans-serif;
   background-color: 	seashell;
+  
 }
 
 
@@ -62,8 +63,10 @@ body {
 .new-blog-card {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 2rem; 
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  gap: 4rem; 
 }
 
 .blog-post-card {
@@ -81,5 +84,5 @@ body {
 }
 
 .blog-post-card button {
-  margin-right: 1rem; 
+  margin-right: 3rem; 
 }
