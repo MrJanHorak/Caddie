@@ -25,11 +25,4 @@ router.delete(
   controller.deleteBlog
 )
 
-// router.post(
-//   '/:blogId/comments/new',
-//   middleware.stripToken,
-//   middleware.verifyToken,
-//   controller.createComment
-// )
-
 module.exports = router
