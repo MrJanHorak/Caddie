@@ -16,15 +16,17 @@ const Tour = () => {
   return (
     <div className="tour-container">
       <h2>PGA Tour Info Page</h2>
-      {rankings.length ? (
-        <ol>
-          {rankings.map((player) => (
-            <li key={player.playerId}>{player.name}</li>
-          ))}
-        </ol>
-      ) : (
-        <h3>Retrieving the Most Up to Date Rankings. . . </h3>
-      )}
+      <div className="tour-list">
+        {rankings.length ? (
+          <ol>
+            {rankings.map((player) => (
+              <li key={player.playerId}>{player.name}</li>
+            ))}
+          </ol>
+        ) : (
+          <h3>Retrieving the Most Up to Date Rankings. . . </h3>
+        )}
+      </div>
     </div>
   )
 }
