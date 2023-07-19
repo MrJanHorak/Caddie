@@ -56,7 +56,7 @@ const Course = () => {
   }
 
   return (
-    <div>
+    <div className="course-container">
       <div className="blog-card">
         <h1>Courses</h1>
         <form onSubmit={handleSubmit}>
