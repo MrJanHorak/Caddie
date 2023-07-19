@@ -17,18 +17,18 @@ body {
 }
 
 .App.light {
-  background-color: blue;
-  color: red;
+  background-color: seashell;
+  color: black;
 }
 
 .App.dark {
-  background-color: green;
-  color: yellow;
+  background-color: black;
+  color: gold;
 }
 
 .darkButton {
   background-color: black;
-  color: pink;
+  color: white;
   display: flex;
   justify-content: flex-start;
   margin: 2px;
@@ -39,7 +39,7 @@ body {
 
 .nav-container {
   background-color: #333;
-  color: blue;
+  color: whitesmoke;
   padding: 1rem;
 }
 

@@ -53,9 +53,9 @@ const App = () => {
     <div className={`App ${themeMode}`}>
       <Nav user={user} handleLogOut={handleLogOut} />
       <main>
-        <button className="darkButton" onClick={toggleTheme}>
+        {/* <button className="darkButton" onClick={toggleTheme}>
           Light/Dark Mode
-        </button>
+        </button> */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/signin" element={<SignIn setUser={setUser} />} />
