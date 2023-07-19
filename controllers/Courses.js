@@ -1,7 +1,7 @@
 const Course = require('../models/Course')
 
 const createCourse = async (req, res) => {
-  const { courseName, city, state } = req.body
+  const { courseName, city, state, par } = req.body
   const newCourse = new Course({
     courseName,
     city,
