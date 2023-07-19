@@ -16,7 +16,7 @@ const Course = () => {
     e.preventDefault()
     let response = await Client.post('/courses/new', formValues)
     setCourses([...courses, response.data])
-    setFormValues({ courseName: '', city: '', state: '' })
+    setFormValues({ courseName: '', city: '', state: '', par: '' })
     // response.data is new object
   }
 
@@ -76,7 +76,7 @@ const Course = () => {
             value={formValues.state}
           />
           <input
-            placeholder="State"
+            placeholder="Course Par"
             onChange={handleParChange}
             value={formValues.par}
           />
