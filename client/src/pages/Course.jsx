@@ -75,6 +75,11 @@ const Course = () => {
             onChange={handleStateChange}
             value={formValues.state}
           />
+          <input
+            placeholder="State"
+            onChange={handleParChange}
+            value={formValues.par}
+          />
           <button type="submit">Add Course</button>
         </form>
       </div>
@@ -82,7 +87,7 @@ const Course = () => {
         {courses.map((course) => (
           <div key={course._id} className="blog-post-card">
             <h4>
-              {course.courseName} {course.city} {course.state}
+              {course.courseName} {course.city} {course.state} {course.par}
             </h4>
             <button onClick={() => handleDelete(course._id)}>
               Delete Course
