@@ -7,7 +7,8 @@ const Course = () => {
   const [formValues, setFormValues] = useState({
     courseName: '',
     city: '',
-    state: ''
+    state: '',
+    par: ''
   })
   const [courses, setCourses] = useState([])
 
@@ -27,6 +28,9 @@ const Course = () => {
   }
   const handleStateChange = (e) => {
     setFormValues({ ...formValues, state: e.target.value })
+  }
+  const handleParChange = (e) => {
+    setFormValues({ ...formValues, par: e.target.value })
   }
 
   useEffect(() => {
