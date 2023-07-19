@@ -4,8 +4,8 @@ const Nav = ({ user, handleLogOut }) => {
   let userOptions
   if (user) {
     userOptions = (
-      <nav>
-        <h3>Welcome {user.email}!</h3>
+      <nav className="nav-options">
+        <h3>Enjoy Your Round {user.email}!</h3>
         <Link onClick={handleLogOut} to="/">
           Sign Out
         </Link>
@@ -18,7 +18,7 @@ const Nav = ({ user, handleLogOut }) => {
   }
 
   const publicOptions = (
-    <nav>
+    <nav className="nav-options">
       <Link to="/">Home</Link>
       <Link to="/register">Register</Link>
       <Link to="/signin">Sign In</Link>
@@ -27,13 +27,13 @@ const Nav = ({ user, handleLogOut }) => {
   )
 
   return (
-    <header>
-      <Link to="/">
+    <header className="nav-container">
+      <Link to="/" className="nav-logo">
         <div>
           <h1>Nav Bar</h1>
         </div>
       </Link>
-      {user ? userOptions : publicOptions}
+      <div className="nav-bar">{user ? userOptions : publicOptions}</div>
     </header>
   )
 }

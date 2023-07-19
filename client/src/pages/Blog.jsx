@@ -2,7 +2,6 @@ import Client from '../services/api'
 import { BASE_URL } from '../services/api'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-// import Comment from './Comment'
 
 const Blog = () => {
   const [formValues, setFormValues] = useState({ content: '' })
@@ -71,9 +70,8 @@ const Blog = () => {
       </div>
       <section className="new-blog-card">
         {blogs.map((blog) => (
-          <div key={blog._id}>
+          <div key={blog._id} className="blog-post-card">
             <h4>{blog.content}</h4>
-            {/* <Comment comment={blog.comments} /> */}
             <button onClick={() => handleDelete(blog._id)}>
               Delete Blog Post
             </button>

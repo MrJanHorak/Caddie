@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <div className="home-container col">
       <section className="welcome-signin">
-        <button onClick={() => navigate('/signin')}>
+        <button onClick={() => navigate('/course')}>
           Click Here To Get Started
         </button>
       </section>
