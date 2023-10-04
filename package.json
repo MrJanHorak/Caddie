@@ -1,6 +1,7 @@
 {
   "name": "caddie",
   "version": "1.0.0",
+  "homepage": "https://{pattongrooms}.github.io/{Caddie}",
   "description": "<img src=\"images/logo-caddie.png\" name=\"image-name\">",
   "main": "server.js",
   "scripts": {
