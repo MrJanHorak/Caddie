@@ -24,5 +24,8 @@
   },
   "devDependencies": {
     "@flydotio/dockerfile": "^0.4.10"
+  },
+  "engines": {
+    "node": "18.x"
   }
 }
